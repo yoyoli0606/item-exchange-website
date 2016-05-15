@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>personal_page</title>
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="css/grid.css" media="screen" rel="stylesheet" type="text/css">
+ 
+  <script src="js/jquery-1.7.2.min.js" ></script>
+  <script src="js/jflow.plus.js"></script>
+  <script src="js/jquery.carouFredSel-5.2.2-packed.js"></script>
+
+  <script>
+	$(document).ready(function() {
+		$("select").selectBox();
+	});
+  </script>
+
+  <script>
+	$(document).ready(function(){
+		$("#myController").jFlow({
+			controller: ".control", // must be class, use . sign
+			slideWrapper : "#jFlowSlider", // must be id, use # sign
+			slides: "#slider",  // the div where all your sliding divs are nested in
+			selectedWrapper: "jFlowSelected",  // just pure text, no sign
+			width: "984px",  // this is the width for the content-slider
+			height: "480px",  // this is the height for the content-slider
+			duration: 400,  // time in miliseconds to transition one slide
+			prev: ".slidprev", // must be class, use . sign
+			next: ".slidnext", // must be class, use . sign
+			auto: true	
+		});
+	});
+  </script>
+  <script>
+	$(function() {
+	  $('#list_product').carouFredSel({
+		prev: '#prev_c1',
+		next: '#next_c1',
+		auto: false
+	  });
+          $('#list_product2').carouFredSel({
+		prev: '#prev_c2',
+		next: '#next_c2',
+		auto: false
+	  });
+	  $('#list_banners').carouFredSel({
+		prev: '#ban_prev',
+		next: '#ban_next',
+		scroll: 1,
+		auto: false
+	  });
+	  $(window).resize();
+	});
+  </script>
+  <script>
+       $(document).ready(function(){
+	      $("button").click(function(){
+		     $(this).addClass('click')
+	      });             
+       })
+  </script>
+    
+</head>
+<body>
+  <div class="container_12">
+    <div id="top" >
+
+      <div class="grid_12">
+        <div class="welcome" style="text-align: center;">
+          Welcome, {{user.name}} ! 
+        </div><!-- .welcome -->
+      </div><!-- .grid_6 -->
+
+      
+    </div><!-- #top -->
+
+    <div class="clear"></div>
+
+    <header id="branding">
+      <div class="grid_3">
+        <hgroup>
+          <h1 id="site_logo" ><a href="#" title=""><img src="images/logo.png" width="175px" height="100px" alt="Online Store Theme Logo"/></a></h1>
+        </hgroup>
+      </div><!-- .grid_3 -->
+      <div class="grid_5">
+        <hgroup>
+         <h2 id="site_logo1" ><a href="#" title=""><img src="images/logo1.png" width="350px" height="100px" alt="Online Store Theme Logo1"/></a></h2>    
+        </hgroup>
+        
+      </div><!-- .grid_3 -->
+
+      <div class="grid_4">
+
+        <nav class="private">
+          <ul>
+            <li><a href="/personal_page">My Account</a></li>
+    <li class="separator">|</li>
+            <li><a href="/logout">Log Out</a></li>
+    <li class="separator">|</li>
+            <li><div><a href='/personal_page'>{{user.name}}</a></div></li>
+          </ul>
+        </nav><!-- .private -->
+      </div><!-- .grid_6 -->
+    </header><!-- #branding -->
+  </div><!-- .container_12 -->
+  
+  <div class="clear"></div>
+  
+   <div id="block_nav_primary">
+    <div class="container_12">
+      <div class="grid_12">
+        <nav class="primary">
+          <ul>
+            <li class="curent"><a href="/index2">Home</a></li>
+            <li class=""><a href="/product_list">Product List</a></li>
+          </ul>
+        </nav><!-- .primary -->
+      </div><!-- .grid_12 -->
+    </div><!-- .container_12 -->
+  </div><!-- .block_nav_primary -->
+  
+  <div class="clear"></div>
+  
+  <section id="main" class="entire_width">
+    <div class="container_12">      
+       <div id="content">
+		<div class="grid_12">
+			<h1 class="page_title">Personal Information</h1>
+		</div><!-- .grid_12 -->
+		
+		<div class="grid_6 new_customers">
+			<!--<h2>New Customers</h2>
+			<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+			<div class="clear"></div>
+			<button class="account">Sign in</button>-->
+                <div class="current" size="8">
+                <table style="text-align: left;font-size: 20px;" >
+                <tr >
+                <td name="name" value="{{ name }}">name:{{user2.name}}</td>
+                </tr>
+                <tr>
+                <td>age:{{user2.age}}</td>
+                </tr>
+                <tr>
+                <td>Email Adress:{{user2.email_address}}</td>
+                </tr>
+                <tr>
+                <td>level:{{level.level}}</td>
+                <td value=""></td>
+                </tr>
+                </table>
+                </div>
+                <input id="button1" type="button" value="selling" onclick="window.location.href='/selling'"
+                style="width:100px;height:35px;background-color:#59B7C2">
+                <br>
+                <br>
+                <input id="button2" type="button" value="sold" onclick="window.location.href='/sold'"
+                style="width:100px;height:35px;background-color:#59B7C2">
+                <br>
+                <br>
+                <input id="button3" type="button" value="wishlist" onclick="window.location.href='/wishlist'"
+                style="width:100px;height:35px;background-color:#59B7C2">
+                <br>
+                <br>
+                <input id="button4" type="button" value="Notification" onclick="window.location.href='/notification'"
+                style="width:100px;height:35px;background-color:#59B7C2">
+                </div><!-- .grid_6 -->
+		
+		<div class="grid_6"> 
+			<form id="targetProduct" class="registed" action="/personal_page" method="POST" enctype="multipart/form-data">
+				<h2>Add new product</h2>
+							
+				<!--<p>Welcome to join us!</p>-->
+							
+				<!--<div class="product name">
+					<strong>Product name:</strong><sup class="surely">*</sup><br/>
+					<input type="text" name="" class="" value="" />
+				</div> --> 
+				<div class="product_name">
+					<strong>Product name:</strong><sup class="surely">*</sup><br/>
+					<input type="text" name="product_name" class="" value="" id="product_name" required/>
+				</div><!-- .product name -->
+				
+				<div class="time">
+					<strong>How long have been used:</strong><sup class="surely">*</sup><br/>
+					<input type="text" name="time" class="" value="" id="time" required/>
+				</div><!-- .time -->
+					
+				<!-- <div class="owner">
+					<strong>Owner:</strong><sup class="surely">*</sup><br/>
+					<input type="text" name="owner" class="" value="" id="owner" required/>
+				</div><!-- .owener -->
+						
+				<div class="price">
+					<strong>Price:</strong><sup class="surely">*</sup><br/>
+					<input type="text" name="price" class="" value="" id="price" required/>
+					<!--<a class="forgot" href="#">Forgot Your Password?</a>-->
+				</div><!-- .price-->
+
+        <div class="phone">
+          <strong>Telephone:</strong><sup class="surely">*</sup><br/>
+          <input type="text" name="phone" class="" value="" id="phone" required/>
+
+        </div>				
+				<div class="description">
+					<strong>Description:</strong><sup class="surely">*</sup><br/>
+					<input type="text" name="description" class="" value="" size="50" id="description" required/>
+				</div><!-- .description-->
+        <div class="description">
+          <input type="file" name="file" required />
+          <!-- <form method="post" action="/file/upload" enctype="multipart/form-data">
+            <input type="file" name="file" />    
+            <input type="submit" value="Upload" />    
+          </form> -->
+        </div><!-- .description-->
+				
+				
+				<div class="submit">										
+					<input type="submit" value="publish" />
+					<sup class="surely">*</sup><span>Required Field</span>
+				</div><!-- .submit -->
+			</form><!-- .registed -->
+                </div><!-- .grid_6 -->
+       </div><!-- #content -->
+       
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  </section><!-- #main -->
+  
+  <div class="clear"></div>
+    
+
+ 
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+</html>
